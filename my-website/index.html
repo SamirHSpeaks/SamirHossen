@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samir Hossen | Real Estate, Business Development & Digital Skills</title>
+  <meta name="description" content="Samir Hossen is a multidisciplinary professional experienced in real estate marketing, business development, digital skills training, AI workflows, customer relations, IT support, and web design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="loader-brand">Samir Hossen</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill" id="preloader-bar"></div>
+    </div>
+    <div class="loader-status" id="preloader-status">Loading Experience • 0%</div>
+  </div>
+
+  <!-- Fixed Canvas for Scroll Scrubbing Animation (Plays in Reverse) -->
+  <div id="canvas-container">
+    <canvas id="bg-canvas"></canvas>
+  </div>
+
+  <!-- Cinematic Vignette & Atmospheric Glow -->
+  <div class="cinematic-overlay"></div>
+  <div class="film-grain"></div>
+
+  <!-- Top Floating Navigation Pill -->
+  <header class="header">
+    <div class="nav-container">
+      <nav class="nav-pill">
+        <a href="#home" class="brand-link">
+          <span class="brand-badge">SH</span>
+          <span class="brand-name">SAMIR HOSSEN</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#home" class="active">HOME</a>
+          <a href="#work">PROFILE</a>
+          <a href="#about">ABOUT</a>
+          <a href="#expertise">EXPERTISE</a>
+          <a href="#experience">EXPERIENCE</a>
+          <a href="#services">SERVICES</a>
+          <a href="#results">EDUCATION</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#videos">VIDEOS</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Based in Dhaka, Bangladesh</span>
+        </div>
+
+        <button class="mobile-menu-btn" id="open-drawer" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-drawer">
+    <div class="drawer-top">
+      <span class="brand-name">SAMIR HOSSEN</span>
+      <button class="drawer-close" id="close-drawer" aria-label="Close Navigation Menu">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <a href="#home" class="drawer-link active">HOME</a>
+      <a href="#work" class="drawer-link">PROFILE</a>
+      <a href="#about" class="drawer-link">ABOUT</a>
+      <a href="#expertise" class="drawer-link">EXPERTISE</a>
+      <a href="#experience" class="drawer-link">EXPERIENCE</a>
+      <a href="#services" class="drawer-link">SERVICES</a>
+      <a href="#results" class="drawer-link">EDUCATION</a>
+      <a href="#gallery" class="drawer-link">GALLERY</a>
+      <a href="#videos" class="drawer-link">VIDEOS</a>
+      <a href="#contact" class="drawer-link">CONTACT</a>
+    </div>
+  </div>
+
+  <!-- Right Sidebar Timeline Navigation Rail -->
+  <div class="right-rail">
+    <a href="#home" class="rail-item active" data-rail="home">
+      <span class="rail-dot"></span>
+      <span class="rail-label">HOME</span>
+    </a>
+    <a href="#work" class="rail-item" data-rail="work">
+      <span class="rail-dot"></span>
+      <span class="rail-label">PROFILE</span>
+    </a>
+    <a href="#about" class="rail-item" data-rail="about">
+      <span class="rail-dot"></span>
+      <span class="rail-label">ABOUT</span>
+    </a>
+    <a href="#expertise" class="rail-item" data-rail="expertise">
+      <span class="rail-dot"></span>
+      <span class="rail-label">EXPERTISE</span>
+    </a>
+    <a href="#experience" class="rail-item" data-rail="experience">
+      <span class="rail-dot"></span>
+      <span class="rail-label">EXPERIENCE</span>
+    </a>
+    <a href="#services" class="rail-item" data-rail="services">
+      <span class="rail-dot"></span>
+      <span class="rail-label">SERVICES</span>
+    </a>
+    <a href="#results" class="rail-item" data-rail="results">
+      <span class="rail-dot"></span>
+      <span class="rail-label">EDUCATION</span>
+    </a>
+    <a href="#gallery" class="rail-item" data-rail="gallery">
+      <span class="rail-dot"></span>
+      <span class="rail-label">GALLERY</span>
+    </a>
+    <a href="#videos" class="rail-item" data-rail="videos">
+      <span class="rail-dot"></span>
+      <span class="rail-label">VIDEOS</span>
+    </a>
+    <a href="#contact" class="rail-item" data-rail="contact">
+      <span class="rail-dot"></span>
+      <span class="rail-label">CONTACT</span>
+    </a>
+  </div>
+
+  <!-- Bottom Left Scroll Prompt -->
+  <div class="scroll-indicator" id="scroll-prompt">
+    <div class="mouse-icon">
+      <div class="mouse-wheel"></div>
+    </div>
+    <span>Scroll Down &darr;</span>
+  </div>
+
+  <!-- MAIN SECTIONS -->
+  <main>
+
+    <!-- ====================================================================
+         SECTION 1: HOME (HERO)
+         ==================================================================== -->
+    <section id="home">
+      <div class="container hero-layout">
+        <div data-reveal>
+          <div class="eyebrow-dot">Real Estate &times; Business Development &times; Digital Skills</div>
+          <h1 class="hero-title">SAMIR<br>HOSSEN</h1>
+
+          <div class="hero-roles">
+            <div class="role-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Real Estate &amp; Business Development</span>
+            </div>
+            <div class="role-item">
+              <span class="role-symbol">&times;</span>
+              <span>Digital Skills Trainer &amp; Mentor</span>
+            </div>
+            <div class="role-item">
+              <span class="role-symbol">&times;</span>
+              <span>Digital Marketing &amp; AI Workflows</span>
+            </div>
+          </div>
+
+          <p class="lead-text">
+            Multidisciplinary professional experienced in real estate marketing, business and team coordination, digital skills training, customer relations, lead generation, IT support, and web design.
+          </p>
+
+          <div class="btn-row">
+            <a href="#contact" class="btn btn-primary">Contact Samir &rarr;</a>
+            <a href="#work" class="btn btn-secondary">View Professional Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="hero-signature-wrap" data-reveal>
+          <div class="signature-text">Samir Hossen</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: SELECTED WORK
+         ==================================================================== -->
+    <section id="work">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> SELECTED WORK</div>
+          <h2 class="section-title">Professional Profile.</h2>
+          <p class="lead-text">Combining client-facing communication and business development with practical digital skills, training, and operational support.</p>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Real Estate</span>
+                <span class="project-num">01</span>
+              </div>
+              <h3 class="project-title">Real Estate Marketing &amp; Client Relations</h3>
+              <p class="project-desc">
+                Supporting property marketing, customer engagement, prospect communication, lead follow-up, and business development for real estate offerings.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Freelancing</span>
+                <span class="project-num">02</span>
+              </div>
+              <h3 class="project-title">Freelancing Training &amp; Mentorship</h3>
+              <p class="project-desc">
+                Guiding learners on practical digital skills, learning pathways, portfolio development, and applying their skills to work.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Digital Skills</span>
+                <span class="project-num">03</span>
+              </div>
+              <h3 class="project-title">Digital Marketing &amp; Content Planning</h3>
+              <p class="project-desc">
+                Planning digital content and applying web research, SEO, and keyword research to support communication and online visibility.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Institutional Leadership</span>
+                <span class="project-num">04</span>
+              </div>
+              <h3 class="project-title">Training Coordination &amp; Learner Support</h3>
+              <p class="project-desc">
+                Supporting institute operations, training delivery, course planning, learner engagement, and practical skills development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Real Estate</span>
+                <span class="project-num">05</span>
+              </div>
+              <h3 class="project-title">AI Workflow &amp; Business Process Support</h3>
+              <p class="project-desc">
+                Applying AI prompting, AI-assisted workflow design, software prototyping, and business-process analysis and improvement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Data &amp; Systems</span>
+                <span class="project-num">06</span>
+              </div>
+              <h3 class="project-title">Web Design, IT Support &amp; Administration</h3>
+              <p class="project-desc">
+                Experience spanning responsive web design, data-entry and administrative workflows, enterprise IT operations, and basic networking support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: ABOUT (MATCHING IMAGE 2 EXACTLY)
+         ==================================================================== -->
+    <section id="about">
+      <div class="container about-exact-layout">
+        <div class="about-photo-wrapper" data-reveal>
+          <div class="about-photo-frame">
+            <img src="images/about-samir.jpg" alt="Samir Hossen" loading="lazy">
+          </div>
+        </div>
+
+        <div class="about-content-block" data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> ABOUT</div>
+          <h2 class="section-title">A multidisciplinary professional.</h2>
+
+          <div class="about-paragraphs">
+            <p class="about-p">
+              Samir brings experience across real estate marketing, business and team coordination, digital skills training, customer relationship management, lead generation, IT support, and web design. He combines client-facing communication and business development with practical digital capabilities.
+            </p>
+            <p class="about-p">
+              His technical work includes AI prompting and workflow automation, software prototyping, requirements and business-process analysis, responsive front-end design, and learner mentoring in freelancing, digital marketing, data entry, and web design.
+            </p>
+          </div>
+
+          <div>
+            <a href="#contact" class="btn btn-work-samir">Work with Samir</a>
+          </div>
+
+          <div class="about-pillars-sub">
+            <span class="pillar-chip">Real Estate Marketing</span>
+            <span class="pillar-chip">Business Development</span>
+            <span class="pillar-chip">Digital Skills Training</span>
+            <span class="pillar-chip">AI Workflows</span>
+            <span class="pillar-chip">Web Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: SKILLS & EXPERTISE
+         ==================================================================== -->
+    <section id="expertise">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> EXPERTISE</div>
+          <h2 class="section-title">Core Competencies.</h2>
+          <p class="lead-text">The professional, technical, and interpersonal capabilities outlined in Samir's CV.</p>
+        </div>
+
+        <div class="skills-chip-group" data-reveal>
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-warm)" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+            <span>Professional &amp; Technical Skills</span>
+          </h3>
+
+          <div class="chips-flex">
+            <span class="chip-item">Real Estate Marketing &amp; Client Relations</span>
+            <span class="chip-item">Business Development &amp; Lead Generation</span>
+            <span class="chip-item">Digital Marketing &amp; Content Planning</span>
+            <span class="chip-item">AI Prompt Engineering &amp; Workflow Automation</span>
+            <span class="chip-item">AI-Assisted Software Prototyping</span>
+            <span class="chip-item">Software &amp; Business Requirements Analysis</span>
+            <span class="chip-item">Business Process Analysis &amp; Improvement</span>
+            <span class="chip-item">CRM &amp; Customer Relationship Management</span>
+            <span class="chip-item">Team Coordination &amp; Project Management</span>
+            <span class="chip-item">Freelancing Training &amp; Mentorship</span>
+            <span class="chip-item">Web Research, SEO &amp; Keyword Research</span>
+            <span class="chip-item">Front-End Web Design &amp; Responsive Layouts</span>
+            <span class="chip-item">HTML5, CSS, Bootstrap, JavaScript &amp; jQuery</span>
+            <span class="chip-item">WordPress, PSD-to-HTML &amp; Figma-to-HTML</span>
+            <span class="chip-item">MS Office, IT Support &amp; Basic Networking</span>
+            <span class="chip-item">Adobe Photoshop &amp; Illustrator</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: EXPERIENCE (CAREER TIMELINE)
+         ==================================================================== -->
+    <section id="experience">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> EXPERIENCE</div>
+          <h2 class="section-title">Professional Experience.</h2>
+          <p class="lead-text">Roles, dates, locations, and responsibilities are presented as stated in the professional CV.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Managing Director</h3>
+                <span class="timeline-period">Recent role; dates not provided</span>
+              </div>
+              <div class="timeline-org">Dream Lands — Real Estate Company &bull; 80/4 Paramount Tower, Malibag, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Lead business planning, day-to-day coordination, and growth initiatives for a real estate business.</div>
+                <div class="timeline-bullet">Support property marketing, client communication, lead follow-up, and business development.</div>
+                <div class="timeline-bullet">Coordinate service presentation and digital communication to strengthen customer trust and brand visibility.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Marketing Executive</h3>
+                <span class="timeline-period">Recent role; dates not provided</span>
+              </div>
+              <div class="timeline-org">Pushpodhara Properties Ltd. — Real Estate Company &bull; Lotus Kamal Tower, Gulshan 2, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Support real estate marketing and customer engagement for property-related offerings.</div>
+                <div class="timeline-bullet">Assist with lead generation, prospect communication, follow-up coordination, and marketing content.</div>
+                <div class="timeline-bullet">Contribute to brand visibility and business development through digital channels and client-focused communication.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Managing Director</h3>
+                <span class="timeline-period">Nov 2024 &ndash; Dec 2025</span>
+              </div>
+              <div class="timeline-org">PSTC Institute for Employment Support (PIES) &bull; Aftabnagar, Rampura, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Oversee institute operations and coordination of employment-oriented digital skills training.</div>
+                <div class="timeline-bullet">Support course planning and learner engagement in computer basics, digital marketing, graphics, and freelancing-related learning.</div>
+                <div class="timeline-bullet">Coordinate training delivery and practical learner support.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Trainer / Mentor — Freelancing</h3>
+                <span class="timeline-period">Nov 2024 &ndash; Dec 2025</span>
+              </div>
+              <div class="timeline-org">Population Services and Training Center (PSTC) &bull; Aftabnagar, Rampura, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Train and mentor learners in freelancing and practical digital skills.</div>
+                <div class="timeline-bullet">Guide learners on learning pathways, portfolio development, and applying digital skills to work.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Data Entry Specialist</h3>
+                <span class="timeline-period">Mar 2024 &ndash; Sep 2025</span>
+              </div>
+              <div class="timeline-org">Taxes Zone-2, Dhaka (All Circle Office) &bull; Circuit House Road, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Supported data-entry and administrative information-handling tasks.</div>
+                <div class="timeline-bullet">Maintained attention to data accuracy, document organization, and routine office workflows.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Managing Director</h3>
+                <span class="timeline-period">Sep 2024 &ndash; Feb 2025</span>
+              </div>
+              <div class="timeline-org">Goodingo Academy &bull; Baridhara, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Supported organizational coordination and day-to-day academy operations.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Mentor — Data Entry, Digital Marketing &amp; Web Design</h3>
+                <span class="timeline-period">Sep 2024 &ndash; Feb 2025</span>
+              </div>
+              <div class="timeline-org">Goodingo Academy &bull; Baridhara, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Mentored learners in data entry, digital marketing, and web design fundamentals.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Customer Relationship Officer (CRO)</h3>
+                <span class="timeline-period">Dec 2023 &ndash; Mar 2024</span>
+              </div>
+              <div class="timeline-org">Lifeskills IT Institute &bull; Banasree, Rampura, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Handled customer communication and relationship support in an IT training environment.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Mentor — Data Entry &amp; Web Design</h3>
+                <span class="timeline-period">Jul 2023 &ndash; Mar 2024</span>
+              </div>
+              <div class="timeline-org">Lifeskills IT Institute &bull; Banasree, Rampura, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Supported learners with data-entry practices and web-design fundamentals.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Manager — Showroom &amp; Sales</h3>
+                <span class="timeline-period">Nov 2022 &ndash; Jun 2023</span>
+              </div>
+              <div class="timeline-org">Festivibe &bull; Banani, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Coordinated showroom activities, sales support, and customer service.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Executive Officer</h3>
+                <span class="timeline-period">Mar 2021 &ndash; Nov 2022</span>
+              </div>
+              <div class="timeline-org">Jamuna Group of Industries &bull; Kuril, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Supported executive and administrative operations within a large business group.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <h3 class="timeline-role">Executive IT</h3>
+                <span class="timeline-period">May 2019 &ndash; Dec 2019</span>
+              </div>
+              <div class="timeline-org">Phoenix Insurance &bull; Nazimuddin Road, Dhaka</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Provided IT-related operational support.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: SERVICES
+         ==================================================================== -->
+    <section id="services">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> SERVICES</div>
+          <h2 class="section-title">What I Offer.</h2>
+          <p class="lead-text">Practical support, independent consultation, and transformational training tailored for learners, buyers, and growing teams.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">01 / CONSULTING</div>
+              <h3 class="service-title">Real Estate Consultant</h3>
+              <p class="service-desc">Property marketing, buyer communication, lead follow-up, and practical real estate business support.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Discuss a Project &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">02 / MENTORSHIP</div>
+              <h3 class="service-title">Freelancing 1-on-1 Mentorship</h3>
+              <p class="service-desc">Personal guidance for choosing a skill, building a portfolio, finding clients, and getting started with freelancing.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Ask About Mentorship &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">03 / BUSINESS</div>
+              <h3 class="service-title">Business Analysis &amp; Development</h3>
+              <p class="service-desc">Clarify business needs, improve processes, plan growth, and turn requirements into practical next steps.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Discuss Your Business &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">04 / ARTIFICIAL INTELLIGENCE</div>
+              <h3 class="service-title">AI Trainer &amp; AI Model Developer</h3>
+              <p class="service-desc">Learn useful AI tools and workflows, or explore custom AI model and prototype development for your needs.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Discuss AI Training &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">05 / SOFTWARE</div>
+              <h3 class="service-title">Software Build and Develop</h3>
+              <p class="service-desc">Plan and build practical software, prototypes, and digital products around real project requirements.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Discuss Software &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">06 / LEARNING</div>
+              <h3 class="service-title">Digital Skills &amp; AI Learning</h3>
+              <p class="service-desc">Build hands-on digital skills in AI, marketing, design, office tools, and technology for work.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Explore Learning &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">07 / TECH SUPPORT</div>
+              <h3 class="service-title">IT &amp; Tech Support</h3>
+              <p class="service-desc">Get help with everyday computer, software, web, and technology setup or troubleshooting needs.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Get Tech Support &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">08 / DIGITAL</div>
+              <h3 class="service-title">Digital Solutions</h3>
+              <p class="service-desc">Find the right digital tools and online solutions to support your business, project, or team.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Plan a Solution &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">09 / WEB</div>
+              <h3 class="service-title">Web and Automations</h3>
+              <p class="service-desc">Create responsive websites and automate repetitive tasks with practical web and workflow tools.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Build Your Workflow &rarr;</a>
+          </div>
+
+          <div class="service-card" data-reveal>
+            <div>
+              <div class="service-idx">10 / CONTENT</div>
+              <h3 class="service-title">Content Creation with or without AI</h3>
+              <p class="service-desc">Plan and create useful written or visual content with AI assistance or a fully manual process.</p>
+            </div>
+            <a href="#contact" class="btn-pill">Create Content &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: EDUCATION & TRAINING
+         ==================================================================== -->
+    <section id="results">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> EDUCATION &amp; DEVELOPMENT</div>
+          <h2 class="section-title">Education &amp; Professional Training.</h2>
+          <p class="lead-text">Academic qualifications, technical development, and additional information from the professional CV.</p>
+        </div>
+
+        <div class="work-grid">
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Diploma Engineering</span>
+                <span class="project-num">01</span>
+              </div>
+              <h3 class="project-title">Computer Science</h3>
+              <p class="project-desc">Government Graphic Arts Institute</p>
+              <p class="project-desc"><strong>CGPA: 3.24 / 4.00</strong></p>
+            </div>
+          </div>
+
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Secondary School Certificate (SSC)</span>
+                <span class="project-num">02</span>
+              </div>
+              <h3 class="project-title">Science</h3>
+              <p class="project-desc">Icchapura Model High School</p>
+              <p class="project-desc"><strong>GPA: 4.41 / 5.00</strong></p>
+            </div>
+          </div>
+
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Oct 2022 &ndash; Jan 2023</span>
+                <span class="project-num">03</span>
+              </div>
+              <h3 class="project-title">Professional Web Design &amp; Development</h3>
+              <p class="project-desc">Creative IT Institute</p>
+              <p class="project-desc">Practical areas: responsive website creation, PSD-to-HTML, and Figma-to-HTML.</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-reveal>
+            <div>
+              <div class="project-header">
+                <span class="project-category">Languages</span>
+                <span class="project-num">04</span>
+              </div>
+              <h3 class="project-title">Bangla, English, Hindi &amp; Urdu</h3>
+              <p class="project-desc">Bangla (Native); English, Hindi, and Urdu.</p>
+              <p class="project-desc"><strong>References available upon request.</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: GALLERY
+         ==================================================================== -->
+    <section id="gallery">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> GALLERY</div>
+          <h2 class="section-title">Moments &amp; Memories.</h2>
+          <p class="lead-text">Explore personal posters, mentorship, achievements, client moments, and work.</p>
+        </div>
+
+        <div class="gallery-category" data-reveal>
+          <h3 class="gallery-category-title">Personal Poster</h3>
+          <div class="gallery-cards-grid">
+            <figure class="gallery-item-card"><img src="images/pp-01.jpeg" alt="Samir Hossen personal poster 1" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/pp-02.jpeg" alt="Samir Hossen personal poster 2" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/pp-03.jpeg" alt="Samir Hossen personal poster 3" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <div class="gallery-category" data-reveal>
+          <h3 class="gallery-category-title">Mentorship</h3>
+          <div class="gallery-cards-grid">
+            <figure class="gallery-item-card"><img src="images/mn-01.jpeg" alt="Samir Hossen mentorship session 1" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/mn-02.jpeg" alt="Samir Hossen mentorship session 2" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/mn-03.jpeg" alt="Samir Hossen mentorship session 3" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/mn-04.jpeg" alt="Samir Hossen mentorship session 4" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/mn-05.jpeg" alt="Samir Hossen mentorship session 5" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <div class="gallery-category" data-reveal>
+          <h3 class="gallery-category-title">Achievement</h3>
+          <div class="gallery-cards-grid">
+            <figure class="gallery-item-card"><img src="images/a-01.jpeg" alt="Samir Hossen achievement 1" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/a-02.jpeg" alt="Samir Hossen achievement 2" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/a-03.jpeg" alt="Samir Hossen achievement 3" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/a-04.jpeg" alt="Samir Hossen achievement 4" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <div class="gallery-category" data-reveal>
+          <h3 class="gallery-category-title">With Clients</h3>
+          <div class="gallery-cards-grid">
+            <figure class="gallery-item-card"><img src="images/cl-01.jpeg" alt="Samir Hossen with clients 1" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/cl-02.jpeg" alt="Samir Hossen with clients 2" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/cl-03.jpeg" alt="Samir Hossen with clients 3" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/cl-04.jpeg" alt="Samir Hossen with clients 4" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/cl-05.jpeg" alt="Samir Hossen with clients 5" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/cl-06.jpeg" alt="Samir Hossen with clients 6" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <div class="gallery-category" data-reveal>
+          <h3 class="gallery-category-title">Work</h3>
+          <div class="gallery-cards-grid">
+            <figure class="gallery-item-card"><img src="images/work-01.jpeg" alt="Samir Hossen at work 1" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/work-02.jpeg" alt="Samir Hossen at work 2" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/work-03.jpeg" alt="Samir Hossen at work 3" loading="lazy"></figure>
+            <figure class="gallery-item-card"><img src="images/work-04.jpeg" alt="Samir Hossen at work 4" loading="lazy"></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9: VIDEOS
+         ==================================================================== -->
+    <section id="videos">
+      <div class="container">
+        <div data-reveal>
+          <div class="eyebrow-tag"><span class="tag-dash"></span> VIDEOS</div>
+          <h2 class="section-title">Watch &amp; Explore.</h2>
+          <p class="lead-text">Short overview, trends of life, and batch review.</p>
+        </div>
+
+        <div class="gallery-cards-grid">
+          <article class="video-card" data-reveal data-video-url="https://www.youtube.com/watch?v=z_MRMPQ_v7w">
+            <h3>Short overview</h3>
+          </article>
+
+          <article class="video-card" data-reveal data-video-url="https://www.youtube.com/watch?v=ngeLU1V8Mbg">
+            <h3>Trends of life</h3>
+          </article>
+
+          <article class="video-card" data-reveal data-video-url="https://youtu.be/_WErCs8IS7Y?si=sB5us3MheM3lC5AR">
+            <h3>Batch Review</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-layout">
+        <div data-reveal>
+          <div class="eyebrow-dot">CONTACT</div>
+          <h2 class="section-title">Let's Start a Conversation.</h2>
+          <p class="lead-text">
+            For professional, training, or collaboration enquiries, contact Samir directly.
+          </p>
+
+          <div class="contact-info-list">
+            <a href="mailto:pcsamirhossain123@gmail.com" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-title">Email Directly</div>
+                <div class="contact-item-value">pcsamirhossain123@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="tel:+8801797054900" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 5.18 2 2 0 0 1 5.08 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.71a16 16 0 0 0 4.29 4.29l1.25-1.25a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-title">Phone</div>
+                <div class="contact-item-value">01797054900</div>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/samir-hossen" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-title">LinkedIn Profile</div>
+                <div class="contact-item-value">linkedin.com/in/samir-hossen</div>
+              </div>
+            </a>
+
+            <a href="https://youtube.com/@SamirHSpeaks" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-title">YouTube</div>
+                <div class="contact-item-value">youtube.com/@SamirHSpeaks</div>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-item-title">Location</div>
+                <div class="contact-item-value">Dhaka, Bangladesh</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Form -->
+        <div class="contact-form-card" data-reveal>
+          <form id="contact-form" method="post" target="contact-form-frame">
+            <input type="hidden" id="submission-token" name="submissionToken">
+            <div hidden aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+880 1XXXXXXXXX">
+              </div>
+              <div class="form-group">
+                <label for="topic">Consultation Area</label>
+                <select id="topic" name="topic" class="form-select">
+                  <option value="Real Estate Marketing & Business Development">Real Estate Marketing &amp; Business Development</option>
+                  <option value="Freelancing Training & Mentorship">Freelancing Training &amp; Mentorship</option>
+                  <option value="Digital Marketing, AI & Web Design Training">Digital Marketing, AI &amp; Web Design Training</option>
+                  <option value="IT Support & Web Design">IT Support &amp; Web Design</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Share your requirement, goals, or preferred schedule..." required></textarea>
+            </div>
+
+            <button id="contact-submit" type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Send Message to Samir &rarr;</span>
+            </button>
+
+            <div id="form-feedback" class="form-status-msg"></div>
+          </form>
+          <iframe id="contact-form-frame" name="contact-form-frame" title="Contact form submission response" hidden></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>SAMIR HOSSEN</h3>
+          <p>Real Estate &amp; Business Development &bull; Digital Marketing &amp; AI Workflows</p>
+        </div>
+
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/samir-hossen" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://youtube.com/@SamirHSpeaks" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+          </a>
+          <a href="mailto:pcsamirhossain123@gmail.com" class="social-btn" aria-label="Email">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="current-year"></span> Samir Hossen. All Rights Reserved.</div>
+        <div class="back-to-top" id="back-to-top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SMOOTH CANVAS SCROLL ANIMATION & INTERACTION SCRIPT (REVERSE PLAYBACK)
+       ========================================================================== -->
+  <script src="script.js"></script>
+</body>
+</html>
