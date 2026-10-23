@@ -8,9 +8,21 @@
 
   // 2. Setup Frames Configuration
   const TOTAL_FRAMES = 240;
-  const useStaticMobileBackground = window.matchMedia(
-    "(max-width: 768px), (pointer: coarse), (prefers-reduced-motion: reduce)"
+  const useMobileFrameLoading = window.matchMedia(
+    "(max-width: 768px), (pointer: coarse)"
   ).matches;
+  const useReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const frameStep = useMobileFrameLoading ? 4 : 1;
+  const frameIndexesToLoad = [];
+  for (let i = TOTAL_FRAMES - 2; i >= 0; i -= frameStep) {
+    frameIndexesToLoad.push(i);
+  }
+  if (frameIndexesToLoad[frameIndexesToLoad.length - 1] !== 0) {
+    frameIndexesToLoad.push(0);
+  }
+  const expectedFrameCount = useReducedMotion ? 1 : frameIndexesToLoad.length + 1;
   const images = new Array(TOTAL_FRAMES);
   let loadedCount = 0;
   let isInitialReady = false;
@@ -31,7 +43,7 @@
   let lastRenderedIndex = START_FRAME_INDEX;
 
   function resizeCanvas() {
-    dpr = Math.min(window.devicePixelRatio || 1, useStaticMobileBackground ? 1.5 : 2);
+    dpr = Math.min(window.devicePixelRatio || 1, useMobileFrameLoading ? 1.5 : 2);
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
     ctx.imageSmoothingEnabled = true;
@@ -97,51 +109,53 @@
     loadedCount++;
     resizeCanvas();
     renderFrame(START_FRAME_INDEX);
-    updateLoader(useStaticMobileBackground ? 100 : 20);
+    updateLoader(Math.round(100 / expectedFrameCount));
 
-    if (useStaticMobileBackground) {
+    if (useReducedMotion) {
       isInitialReady = true;
       setTimeout(dismissPreloader, 250);
     }
   };
   firstImg.onerror = function () {
     loadedCount++;
-    if (useStaticMobileBackground) {
+    if (useReducedMotion) {
       updateLoader(100);
       isInitialReady = true;
       dismissPreloader();
     }
   };
 
-  // Progressively load all other frames from 238 down to 0 (top-of-page to bottom)
-  if (!useStaticMobileBackground) {
-    for (let i = TOTAL_FRAMES - 2; i >= 0; i--) {
+  // Mobile loads every fourth frame to keep the animation light on data and memory.
+  if (!useReducedMotion) {
+    frameIndexesToLoad.forEach(function (i) {
       const img = new Image();
       img.src = getFramePath(i);
       images[i] = img;
       img.onload = function () {
         loadedCount++;
-        const currentPct = Math.min(100, Math.round((loadedCount / TOTAL_FRAMES) * 100));
+        const currentPct = Math.min(100, Math.round((loadedCount / expectedFrameCount) * 100));
         updateLoader(currentPct);
 
-        // Once first 25 priority frames are loaded, page is interactive immediately
-        if (loadedCount >= 25 && !isInitialReady) {
+        // Desktop waits for a small frame buffer; mobile can start with the first frame.
+        const readyFrameCount = useMobileFrameLoading ? 1 : 25;
+        if (loadedCount >= readyFrameCount && !isInitialReady) {
           isInitialReady = true;
           setTimeout(dismissPreloader, 250);
         }
 
-        if (loadedCount === TOTAL_FRAMES) {
+        if (loadedCount === expectedFrameCount) {
           dismissPreloader();
         }
       };
       img.onerror = function () {
         loadedCount++;
-        if (loadedCount >= 25 && !isInitialReady) {
+        const readyFrameCount = useMobileFrameLoading ? 1 : 25;
+        if (loadedCount >= readyFrameCount && !isInitialReady) {
           isInitialReady = true;
           setTimeout(dismissPreloader, 250);
         }
       };
-    }
+    });
   }
 
   // Fallback: dismiss loader after 2.5s maximum
@@ -205,7 +219,7 @@
   // Start loop
   resizeCanvas();
   calculateTargetProgress();
-  if (!useStaticMobileBackground) {
+  if (!useReducedMotion) {
     animationLoop();
   }
 
