@@ -1136,7 +1136,7 @@ p.lead-text {
 
 .skills-chip-heading h3 strong,
 .section-title-accent {
-  color: #ff263f;
+  color: #f95e00;
 }
 
 .skills-heading-icon {
@@ -1146,7 +1146,7 @@ p.lead-text {
   flex: 0 0 52px;
   place-items: center;
   border-radius: 12px;
-  background: linear-gradient(145deg, #f01934, #a70620);
+  background: #f95e00;
   color: #fff;
   box-shadow: 0 0 20px rgba(255, 25, 55, 0.35);
 }
