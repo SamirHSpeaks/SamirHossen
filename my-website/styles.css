@@ -640,7 +640,6 @@ h2.section-title {
   letter-spacing: -0.02em;
   margin-bottom: 18px;
   color: #fff;
-  text-align: center;
 }
 
 .reference-heading {
@@ -656,8 +655,9 @@ p.lead-text {
   font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   color: var(--text-muted);
   line-height: 1.68;
-  max-width: 640px;
+  width: auto;
   margin-bottom: 24px;
+  text-align: center; 
 }
 
 /* Buttons */
@@ -1655,6 +1655,7 @@ p.lead-text {
   height: 100%;
   object-fit: cover;
 }
+
 
 .video-card {
   overflow: hidden;
