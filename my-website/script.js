@@ -109,6 +109,7 @@
     loadedCount++;
     resizeCanvas();
     renderFrame(START_FRAME_INDEX);
+    requestAnimationFrameForScroll();
     updateLoader(Math.round(100 / expectedFrameCount));
 
     if (useReducedMotion) {
@@ -133,6 +134,7 @@
       images[i] = img;
       img.onload = function () {
         loadedCount++;
+        requestAnimationFrameForScroll();
         const currentPct = Math.min(100, Math.round((loadedCount / expectedFrameCount) * 100));
         updateLoader(currentPct);
 
@@ -165,6 +167,7 @@
   let currentProgress = 0;
   let targetProgress = 0;
   let animationFrameId = null;
+  let lastAnimationTime = 0;
 
   function calculateTargetProgress() {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -176,13 +179,90 @@
     if (progressBar) {
       progressBar.style.width = (targetProgress * 100) + "%";
     }
+
+    requestAnimationFrameForScroll();
   }
 
   window.addEventListener("scroll", calculateTargetProgress, { passive: true });
+  window.addEventListener("resize", function () {
+    calculateTargetProgress();
+    document.querySelectorAll("[data-gallery-panel]").forEach(function (panel) {
+      updateGallerySlider(panel);
+    });
+  }, { passive: true });
 
-  function animationLoop() {
-    // Smooth linear interpolation
-    currentProgress += (targetProgress - currentProgress) * 0.12;
+  function updateGallerySlider(panel) {
+    const track = panel.querySelector("[data-gallery-track]");
+    const previousButton = panel.querySelector("[data-gallery-prev]");
+    const nextButton = panel.querySelector("[data-gallery-next]");
+    const count = panel.querySelector("[data-gallery-count]");
+    if (!track || !previousButton || !nextButton || !count || track.clientWidth === 0) return;
+
+    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+    const firstCard = track.querySelector(".gallery-item-card");
+    const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : track.clientWidth;
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+    const visibleCards = Math.max(1, Math.floor((track.clientWidth + gap) / (cardWidth + gap)));
+    const totalPages = Math.max(
+      1,
+      Math.ceil(track.querySelectorAll(".gallery-item-card").length / visibleCards)
+    );
+    const currentPage = track.scrollLeft >= maxScroll - 1
+      ? totalPages - 1
+      : Math.floor(track.scrollLeft / track.clientWidth);
+
+    previousButton.disabled = track.scrollLeft <= 1;
+    nextButton.disabled = track.scrollLeft >= maxScroll - 1;
+    count.textContent = String(currentPage + 1).padStart(2, "0")
+      + " / " + String(totalPages).padStart(2, "0");
+  }
+
+  function setupGallerySliders() {
+    const gallery = document.querySelector("[data-gallery]");
+    if (!gallery) return;
+
+    const panels = Array.from(gallery.querySelectorAll("[data-gallery-panel]"));
+
+    panels.forEach(function (panel) {
+      const track = panel.querySelector("[data-gallery-track]");
+      const previousButton = panel.querySelector("[data-gallery-prev]");
+      const nextButton = panel.querySelector("[data-gallery-next]");
+      if (!track || !previousButton || !nextButton) return;
+
+      previousButton.addEventListener("click", function () {
+        track.scrollBy({
+          left: -track.clientWidth,
+          behavior: useReducedMotion ? "auto" : "smooth"
+        });
+      });
+      nextButton.addEventListener("click", function () {
+        track.scrollBy({
+          left: track.clientWidth,
+          behavior: useReducedMotion ? "auto" : "smooth"
+        });
+      });
+      track.addEventListener("scroll", function () {
+        updateGallerySlider(panel);
+      }, { passive: true });
+      updateGallerySlider(panel);
+    });
+  }
+
+  function requestAnimationFrameForScroll() {
+    if (!useReducedMotion && animationFrameId === null) {
+      animationFrameId = requestAnimationFrame(animationLoop);
+    }
+  }
+
+  function animationLoop(timestamp) {
+    animationFrameId = null;
+    const elapsed = lastAnimationTime
+      ? Math.min(timestamp - lastAnimationTime, 64)
+      : 16.67;
+    const smoothing = 1 - Math.exp(-elapsed / 45);
+    currentProgress += (targetProgress - currentProgress) * smoothing;
+    const isSettled = Math.abs(targetProgress - currentProgress) < 0.0002;
+    if (isSettled) currentProgress = targetProgress;
 
     // *** REVERSE ANIMATION FORMULA ***
     // When currentProgress is 0 (top of page) -> reverseProgress is 1 -> targetFrame is 239 (ezgif-frame-240.jpg)
@@ -213,15 +293,19 @@
       }
     }
 
-    animationFrameId = requestAnimationFrame(animationLoop);
+    if (isSettled) {
+      lastAnimationTime = 0;
+    } else {
+      lastAnimationTime = timestamp;
+      requestAnimationFrameForScroll();
+    }
   }
 
   // Start loop
   resizeCanvas();
+  setupGallerySliders();
   calculateTargetProgress();
-  if (!useReducedMotion) {
-    animationLoop();
-  }
+  requestAnimationFrameForScroll();
 
   // 7. Scroll Reveal Observer for Text & Cards
   const revealElements = document.querySelectorAll("[data-reveal]");
