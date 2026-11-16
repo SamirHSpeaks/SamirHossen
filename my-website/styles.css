@@ -1555,7 +1555,7 @@ p.lead-text {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  background: transparent;
+  background: #0000002e;
 }
 
 .gallery-panel-heading {
@@ -1568,8 +1568,8 @@ p.lead-text {
 
 .gallery-category-title {
   margin: 0;
-  color: rgba(255, 255, 255, 0.84);
-  font-size: clamp(12px, 1vw, 14px);
+  color: #f95e00;
+  font-size: clamp(19px, 1vw, 14px);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2208,13 +2208,13 @@ footer {
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 0.18em;
-  color: #fff;
+  color: #f95e00;
   margin-bottom: 6px;
 }
 
 .footer-brand p {
   font-size: 13px;
-  color: var(--text-dim);
+  color: #ffffff;
 }
 
 .footer-socials {
